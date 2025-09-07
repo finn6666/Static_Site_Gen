@@ -21,7 +21,21 @@ wheels/
 *.egg
 MANIFEST
 
-# Generated site content
-
 # Virtual environments
 .venv
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files and temporary files
+*.tmp
+*.log
