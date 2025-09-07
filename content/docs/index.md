@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project is a **custom static site generator** built from scratch in Python. It converts Markdown content into a complete website with proper HTML structure, CSS styling, and navigation.
+This project is a custom static site generator built from scratch in Python. It converts Markdown content into a complete website with proper HTML structure, CSS styling, and navigation.
 
 ## Architecture
 
@@ -15,7 +15,7 @@ This project is a **custom static site generator** built from scratch in Python.
    - Handles headings, paragraphs, lists, links, images, code blocks
    - Supports nested elements and complex formatting
 
-2. **Page Generator** - Main generation logic
+2. **Page Generator** - Main generation logic  
    - Takes Markdown files and HTML templates
    - Generates complete HTML pages
    - Supports recursive directory processing
@@ -28,66 +28,42 @@ This project is a **custom static site generator** built from scratch in Python.
 ## Technical Features
 
 ### Markdown Support
-- **Headers**: `# ## ###` becomes `<h1> <h2> <h3>`
+- **Headers**: Hash symbols become HTML headings
 - **Text Formatting**: Bold, italic, and code formatting
-- **Links**: `[text](url)` becomes `<a href="url">text</a>`
-- **Images**: `![alt](src)` becomes `<img src="src" alt="alt">`
+- **Links**: Bracket notation becomes anchor tags
+- **Images**: Exclamation bracket notation becomes img tags
 - **Lists**: Unordered and ordered lists
-- **Blockquotes**: `>` becomes `<blockquote>`
-- **Code Blocks**: Three backticks become `<pre><code>`
+- **Blockquotes**: Greater than symbol becomes blockquote
+- **Code Blocks**: Three backticks become pre code blocks
 
 ### Build System
-- **Local Development**: Uses `/` base path for localhost testing
+- **Local Development**: Uses forward slash base path for localhost testing
 - **Production Build**: Configurable base path for GitHub Pages deployment
-- **Recursive Processing**: Automatically finds and converts all `.md` files
+- **Recursive Processing**: Automatically finds and converts all markdown files
 - **Template System**: Single HTML template for consistent styling
 
 ## Usage
 
-### Local Development
-```bash
-python3 src/main.py
-# Builds site with base path "/" into docs/ directory
-```
+Run **python3 src/main.py** to build for local development.
 
-### Production Build
-```bash
-./build.sh
-# Builds site with base path "/Static_Site_Gen/" for GitHub Pages
-```
+Run **./build.sh** to build for GitHub Pages production.
 
-### Development Server
-```bash
-./main.sh
-# Starts local server at http://localhost:8888
-```
+Run **./main.sh** to start the development server.
 
 ## Project Structure
 
-```
-Static-Site-Gen/
-├── src/                    # Source code
-│   ├── main.py            # Main build script
-│   ├── gen-page.py        # Page generation logic
-│   ├── textnode.py        # Markdown parsing
-│   └── htmlnode.py        # HTML node classes
-├── content/               # Markdown content
-│   ├── index.md          # Homepage
-│   ├── blog/             # Blog posts
-│   └── contact/          # Contact page
-├── static/               # Static assets
-│   ├── index.css         # Styles
-│   └── images/           # Images
-├── docs/                 # Generated site (GitHub Pages)
-├── template.html         # HTML template
-└── build.sh              # Production build script
-```
+The main directories are:
+- **src/** - Contains all Python source code
+- **content/** - Contains all Markdown content files
+- **static/** - Contains CSS, images, and other assets
+- **docs/** - Contains the generated website files
+- **template.html** - The HTML template used for all pages
 
 ## Build Process
 
 1. **Clean**: Remove old generated files
 2. **Copy Static**: Copy CSS, images, etc. to output directory
-3. **Parse Markdown**: Convert all `.md` files to HTML
+3. **Parse Markdown**: Convert all markdown files to HTML
 4. **Apply Template**: Inject content into HTML template
 5. **Fix Paths**: Adjust URLs for deployment environment
 6. **Output**: Generate complete static website
@@ -95,16 +71,16 @@ Static-Site-Gen/
 ## Deployment
 
 ### GitHub Pages Setup
-1. Build site into docs/ directory
+1. Build site into docs directory
 2. Push to GitHub repository
 3. Enable Pages in repository settings
-4. Set source to main branch, docs/ folder
+4. Set source to main branch, docs folder
 5. Site automatically deploys to your GitHub Pages URL
 
 ### Path Configuration
-- **Local**: Base path "/" for development
-- **Production**: Base path "/Static-Site-Gen/" for GitHub Pages
-- Automatically replaces href="/" and src="/" in generated HTML
+- **Local**: Base path forward slash for development
+- **Production**: Base path with repo name for GitHub Pages
+- Automatically replaces href and src paths in generated HTML
 
 ## Key Learning Concepts
 
@@ -115,7 +91,7 @@ Static-Site-Gen/
 
 ### File I/O and Path Handling
 - Recursive directory traversal
-- File reading/writing operations
+- File reading and writing operations
 - Cross-platform path handling
 
 ### Template Processing
@@ -140,7 +116,7 @@ Static-Site-Gen/
 
 ### Performance Optimizations
 - **Caching**: Skip unchanged files
-- **Minification**: Compress CSS/HTML
+- **Minification**: Compress CSS and HTML
 - **Image Optimization**: Automatic image compression
 
 ## What I Learned

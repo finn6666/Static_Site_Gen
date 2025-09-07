@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Static Site Generator Documentation</title>
+    <link href="/Static_Site_Gen/index.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <article><div><h1>Static Site Generator Documentation</h1><p><a href="/Static_Site_Gen/">< Back Home</a></p><h2>Overview</h2><p>This project is a custom static site generator built from scratch in Python. It converts Markdown content into a complete website with proper HTML structure, CSS styling, and navigation.</p><h2>Architecture</h2><h3>Core Components</h3><p>1. <b>Markdown Parser</b> - Handles textnode.py and htmlnode.py    - Converts Markdown syntax to HTML nodes    - Handles headings, paragraphs, lists, links, images, code blocks    - Supports nested elements and complex formatting</p><p>2. <b>Page Generator</b> - Main generation logic      - Takes Markdown files and HTML templates    - Generates complete HTML pages    - Supports recursive directory processing</p><p>3. <b>Static Asset Manager</b> - File management    - Copies CSS, images, and other static files    - Maintains directory structure    - Cleans destination before rebuilding</p><h2>Technical Features</h2><h3>Markdown Support
+- <b>Headers</b>: Hash symbols become HTML headings
+- <b>Text Formatting</b>: Bold, italic, and code formatting
+- <b>Links</b>: Bracket notation becomes anchor tags
+- <b>Images</b>: Exclamation bracket notation becomes img tags
+- <b>Lists</b>: Unordered and ordered lists
+- <b>Blockquotes</b>: Greater than symbol becomes blockquote
+- <b>Code Blocks</b>: Three backticks become pre code blocks</h3><h3>Build System
+- <b>Local Development</b>: Uses forward slash base path for localhost testing
+- <b>Production Build</b>: Configurable base path for GitHub Pages deployment
+- <b>Recursive Processing</b>: Automatically finds and converts all markdown files
+- <b>Template System</b>: Single HTML template for consistent styling</h3><h2>Usage</h2><p>Run <b>python3 src/main.py</b> to build for local development.</p><p>Run <b>./build.sh</b> to build for GitHub Pages production.</p><p>Run <b>./main.sh</b> to start the development server.</p><h2>Project Structure</h2><p>The main directories are: - <b>src/</b> - Contains all Python source code - <b>content/</b> - Contains all Markdown content files - <b>static/</b> - Contains CSS, images, and other assets - <b>docs/</b> - Contains the generated website files - <b>template.html</b> - The HTML template used for all pages</p><h2>Build Process</h2><ol><li><b>Clean</b>: Remove old generated files</li><li><b>Copy Static</b>: Copy CSS, images, etc. to output directory</li><li><b>Parse Markdown</b>: Convert all markdown files to HTML</li><li><b>Apply Template</b>: Inject content into HTML template</li><li><b>Fix Paths</b>: Adjust URLs for deployment environment</li><li><b>Output</b>: Generate complete static website</li></ol><h2>Deployment</h2><h3>GitHub Pages Setup
+1. Build site into docs directory
+2. Push to GitHub repository
+3. Enable Pages in repository settings
+4. Set source to main branch, docs folder
+5. Site automatically deploys to your GitHub Pages URL</h3><h3>Path Configuration
+- <b>Local</b>: Base path forward slash for development
+- <b>Production</b>: Base path with repo name for GitHub Pages
+- Automatically replaces href and src paths in generated HTML</h3><h2>Key Learning Concepts</h2><h3>Object-Oriented Design
+- <b>TextNode</b>: Represents parsed Markdown elements
+- <b>HTMLNode</b>: Builds HTML structure
+- <b>Inheritance</b>: Different node types inherit from base classes</h3><h3>File I/O and Path Handling
+- Recursive directory traversal
+- File reading and writing operations
+- Cross-platform path handling</h3><h3>Template Processing
+- String replacement for dynamic content
+- HTML template system
+- Content injection</h3><h3>Command Line Interface
+- Command-line arguments for configuration
+- Configurable build options
+- Script automation</h3><h2>Future Enhancements</h2><h3>Potential Features
+- <b>Live Reload</b>: Auto-refresh during development
+- <b>Syntax Highlighting</b>: Code block highlighting
+- <b>RSS Feed</b>: Auto-generate blog feed
+- <b>Search</b>: Client-side search functionality
+- <b>Themes</b>: Multiple template options
+- <b>Plugin System</b>: Extensible architecture</h3><h3>Performance Optimizations
+- <b>Caching</b>: Skip unchanged files
+- <b>Minification</b>: Compress CSS and HTML
+- <b>Image Optimization</b>: Automatic image compression</h3><h2>What I Learned</h2><p>Building this static site generator taught me:</p><ol><li><b>Parsing Algorithms</b>: How to convert text formats to structured data</li><li><b>Build Systems</b>: Understanding compilation and deployment pipelines</li><li><b>Web Fundamentals</b>: HTML structure, CSS styling, and URL handling</li><li><b>Python Proficiency</b>: File handling, OOP, and module organization</li><li><b>DevOps Basics</b>: Deployment, version control, and automation</li></ol><p>This project demonstrates end-to-end development skills from parsing algorithms to production deployment!</p></div></article>
+  </body>
+</html>
