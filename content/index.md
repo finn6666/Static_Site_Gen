@@ -31,6 +31,10 @@ Here are some reasons why Tolkien's work is amazing:
 
 When coding our fan site, we use `HTML` and `CSS` to display the content properly.
 
+## Project Documentation
+
+Want to learn how this site was built? Check out the [technical documentation](/docs) that explains the custom static site generator powering this site!
+
 ## A Quote to Remember
 
 > "I am in fact a Hobbit in all but size. I like gardens, trees, and unmechanized farmlands; I smoke a pipe, and like good plain food (unrefrigerated), but detest French cooking; I like, and even dare to wear in these dull days, ornamental waistcoats. I am fond of mushrooms (out of a field); have a very simple sense of humor (which even my appreciative critics find tiresome); I go to bed late and get up late (when possible). I do not travel much."
