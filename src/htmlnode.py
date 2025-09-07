@@ -1,4 +1,4 @@
-from src.textnode import TextNode, TextNodeType
+from textnode import TextNode, TextNodeType
 
 
 class HTMLNode:
@@ -7,6 +7,16 @@ class HTMLNode:
         self.value = value
         self.children = children or []
         self.props = props or {}
+
+    def __eq__(self, other):
+        if not isinstance(other, HTMLNode):
+            return False
+        return (
+            self.tag == other.tag and
+            self.value == other.value and
+            self.children == other.children and
+            self.props == other.props
+        )
 
     def to_html(self) -> str:
         raise NotImplementedError("Subclasses should implement this method")
